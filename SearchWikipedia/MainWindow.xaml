@@ -6,7 +6,50 @@
         xmlns:local="clr-namespace:SearchWikipedia"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid
+    x:Name="LayoutRoot"
+    Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition
+          Height="Auto" />
+            <RowDefinition
+          Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel
+       x:Name="TitlePanel"
+       Grid.Row="0"
+       Margin="12,17,0,28">
+            <TextBlock
+          x:Name="ApplicationTitle"
+          Text="Wikipedia Search" />
+            <TextBlock
+          x:Name="PageTitle"
+          Text="Find"
+          Margin="9,-7,0,0" />
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <StackPanel
+       Grid.Row="1"
+       HorizontalAlignment="Stretch"
+       VerticalAlignment="Stretch">
+            <TextBox
+          Name="Search"
+          Text=""
+          HorizontalAlignment="Stretch" />
+            <TextBlock
+          Name="lblSearch"
+          Text="Searching for..." />
+            <TextBlock
+          Name="lblProgress"
+          Text="Loading..."
+          Visibility="Collapsed"/>
+            <WebBrowser 
+          Name="webBrowser1"
+          HorizontalAlignment="Stretch"
+          Height="469" />
+        </StackPanel>
     </Grid>
 </Window>
